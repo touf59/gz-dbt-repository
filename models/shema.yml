@@ -1,24 +1,48 @@
- # schema.yml
 
- version: 2
 
- sources:
-        - name: raw_gz_sales
-          schema: gz_raw_data
-          tables:
-            - name: raw_gz_sales
-              description: sales of Greenweez / we have on row per product_id found in each orders_id
-              columns:
-                - name: date_date
-                  description: date of purchase
-                - name: orders_id
-                  description: id of the order
-                - name: pdt_id
-                  description: id of the product
-                - name: revenue
-                  description: amount of the revenue
-                - name: quantity
-                  description: amount of product quantity
-            - name: raw_gz_product
-            - name: raw_gz_ship
+version: 2
+sources:
+  - name: raw
+    schema: gz_raw_data
+    tables:
+      - name: raw_gz_sales
+        description: sales of Greenweez / we have one row per product_id found in each orders_id
+        columns:
+          - name: date_date
+            description: date of purchase
+          - name: orders_id
+            description: ID of the order
+          - name: pdt_id
+            description: ID of the product
+          - name: revenue
+            description: amount of the revenue
+          - name: quantity
+            description: amount of product quantity
+        tests:
+          - unique:
+              column_name: "(orders_id||pdt_id)"
+      - name: raw_gz_ship
+        description: shipping information
+        columns:
+          - name: orders_id
+            description: ID of the order
+          - name: shipping_fee
+            description: shipping fee of the order
+          - name: shipping_fee1
+            description: secondary shipping fee of the order
+          - name: logcost
+            description: log of the cost
+          - name: shipcost
+            description: shipping cost
+      - name: raw_gz_product  # Correction ici : sans 's'
+        description: product information for Greenweez test
+        columns:
+          - name: products_id
+            description: ID of the product
+            tests:
+              - unique
+              - not_null
+          - name: purchase_price  # Correction ici : orthographe correcte
+            description: purchase price    
+
 
