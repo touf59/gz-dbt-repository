@@ -62,6 +62,9 @@ sources:
             description: nombre d'impression
           - name: click
             description: nombre de click
+        tests:
+          - unique:
+              column_name: "(date_date ||campgn_name)"
       - name: bing
         identifier: raw_gz_bing
         description: raw_gz_bing
@@ -80,6 +83,9 @@ sources:
             description: nombre d'impression
           - name: click
             description: nombre de clic
+        tests:
+          - unique:
+              column_name: "(date_date ||campgn_name)"
       - name: criteo
         identifier: raw_gz_criteo
         description: raw_gz_criteo
@@ -98,6 +104,9 @@ sources:
             description: nombre d'impression
           - name: click
             description: nombre de clic
+        tests:
+          - unique:
+              column_name: "(date_date ||campgn_name)"
       - name: facebook
         identifier: raw_gz_facebook
         description: raw_gz_facebook
@@ -116,3 +125,6 @@ sources:
             description: nombre d'impression
           - name: click
             description: nombre de clic
+        tests:
+          - unique:
+              column_name: "(date_date ||campgn_name)"
