@@ -1,3 +1,3 @@
-{% macro calculmargin(revenue, purchase_cost) %}
-    SAFE_DIVIDE({{ revenue }} - {{ purchase_cost }}, {{ revenue }})
+{% macro calculmargin(revenue, tututu) %}
+    SAFE_DIVIDE({{ revenue }} - {{ tututu }}, {{ revenue }})
 {% endmacro %}
