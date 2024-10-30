@@ -45,6 +45,7 @@ sources:
           - name: purchase_price  # Correction ici : orthographe correcte
             description: purchase price    
       - name: adwords
+        identifier: raw_gz_adwords
         description: raw_gz_adwords
         columns:
           - name: date_date
@@ -57,9 +58,61 @@ sources:
             description: nom de la campagne
           - name: ads_cost
             description: cout de publicite
-          - name: campgn_name
-            description: nom de la campagne
           - name: impression
             description: nombre d'impression
           - name: click
             description: nombre de click
+      - name: bing
+        identifier: raw_gz_bing
+        description: raw_gz_bing
+        columns:
+          - name: date_date
+            description: date de campagne
+          - name: paid_source
+            description: source de paiement
+          - name: campaign_key
+            description: cle de campagne
+          - name: campgn_name
+            description: nom de la campagne
+          - name: ads_cost
+            description: cout de publicite
+          - name: impression
+            description: nombre d'impression
+          - name: click
+            description: nombre de clic
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: raw_gz_criteo
+        columns:
+          - name: date_date
+            description: date de campagne
+          - name: paid_source
+            description: source de paiement
+          - name: campaign_key
+            description: cle de campagne
+          - name: campgn_name
+            description: nom de la campagne
+          - name: ads_cost
+            description: cout de publicite
+          - name: impression
+            description: nombre d'impression
+          - name: click
+            description: nombre de clic
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: raw_gz_facebook
+        columns:
+          - name: date_date
+            description: date de campagne
+          - name: paid_source
+            description: source de paiement
+          - name: campaign_key
+            description: cle de campagne
+          - name: campgn_name
+            description: nom de la campagne
+          - name: ads_cost
+            description: cout de publicite
+          - name: impression
+            description: nombre d'impression
+          - name: click
+            description: nombre de clic
